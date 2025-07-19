@@ -1,0 +1,500 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --primary-color: #4CAF50; /* Hijau */
+    --secondary-color: #FFC107; /* Kuning */
+    --accent-color: #F44336; /* Merah */
+    --text-color: #333;
+    --background-light: #f0f2f5;
+    --background-dark: #e0e2e5;
+    --success-color: #28a745; /* Hijau untuk benar */
+    --error-color: #dc3545; /* Merah untuk salah */
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #FFFFFF; /* Atau transparent jika Anda ingin background kosong */
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Gaya untuk Layar Pembuka */
+.splash-screen {
+    position: fixed; /* Menutupi seluruh viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #a1c4fd, #c2e9fb); /* Background menarik untuk splash screen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000; /* Pastikan di atas semua elemen lain */
+    color: white; /* Warna teks untuk splash screen */
+    text-align: center;
+    animation: fadeIn 1s ease-out; /* Animasi fade-in */
+}
+
+.splash-content {
+    max-width: 80%;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.3); /* Sedikit transparan */
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.splash-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.splash-content .description {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.start-button {
+    background-color: var(--secondary-color); /* Warna kuning */
+    color: var(--text-color); /* Teks hitam */
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.start-button:hover {
+    background-color: #FFD700; /* Kuning lebih terang */
+    transform: translateY(-2px);
+}
+
+/* Animasi Fade In */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Kelas hidden untuk menyembunyikan elemen */
+.hidden {
+    display: none !important;
+}
+
+/* Gaya untuk topbar */
+.topbar {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.topbar-title {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin: 0;
+}
+
+.topbar-music-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.topbar-button {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.topbar-button:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    border-color: white;
+}
+
+/* Gaya untuk container utama game agar ada jarak dari topbar */
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* Gaya skor dan timer tetap sama */
+.score-container {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+#correctScore {
+    color: var(--success-color);
+}
+
+#incorrectScore {
+    color: var(--accent-color);
+}
+
+.timer-container {
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    text-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.1);
+}
+
+#timerDisplay {
+    font-size: 1.5em;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+
+:root {
+    --primary-color: #4CAF50; /* Hijau */
+    --secondary-color: #FFC107; /* Kuning */
+    --accent-color: #F44336; /* Merah */
+    --text-color: #333;
+    --background-light: #f0f2f5;
+    --background-dark: #e0e2e5;
+    --success-color: #28a745; /* Hijau untuk benar */
+    --error-color: #dc3545; /* Merah untuk salah */
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column; /* Mengubah ini agar topbar berada di atas */
+    justify-content: flex-start; /* Mulai dari atas */
+    align-items: center;
+    min-height: 100vh;
+    background-color: #FFFFFF; /* Atau transparent jika Anda ingin background kosong */
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.topbar {
+    width: 100%;
+    background-color: var(--primary-color); /* Warna hijau untuk topbar */
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between; /* Untuk menempatkan judul dan kontrol musik di ujung */
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sedikit bayangan */
+    position: sticky; /* Membuat topbar tetap di atas saat digulir */
+    top: 0;
+    z-index: 1000; /* Pastikan topbar berada di atas elemen lain */
+}
+
+.topbar-title {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin: 0;
+}
+
+.topbar-music-controls {
+    display: flex;
+    gap: 10px; /* Jarak antar tombol */
+}
+
+.topbar-button {
+    background-color: rgba(255, 255, 255, 0.2); /* Sedikit transparan */
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.topbar-button:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    border-color: white;
+}
+
+/* Gaya untuk container utama game agar ada jarak dari topbar */
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+    margin-top: 30px; /* Memberi jarak dari topbar */
+    margin-bottom: 30px; /* Jarak dari footer */
+}
+
+/* Gaya lama yang mungkin perlu disesuaikan jika ada konflik */
+.score-container {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+#correctScore {
+    color: var(--success-color);
+}
+
+#incorrectScore {
+    color: var(--accent-color);
+}
+
+.timer-container {
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    text-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.1);
+}
+
+#timerDisplay {
+    font-size: 1.5em;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+/* ... gaya lainnya ... */
+
+.score-container {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+#correctScore {
+    color: var(--success-color); /* Hijau */
+}
+
+#incorrectScore {
+    color: var(--accent-color); /* Merah */
+}
+
+:root {
+    --primary-color: #6a0572; /* Ungu gelap */
+    --secondary-color: #9b59b6; /* Ungu terang */
+    --accent-color: #e74c3c; /* Merah untuk pesan error/salah */
+    --success-color: #2ecc71; /* Hijau untuk pesan benar */
+    --text-color: #333;
+    --bg-light: #f5f6fa;
+    --bg-dark: #34495e;
+    --card-bg: #ffffff;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #a1c4fd, #c2e9fb); /* Gradien biru muda yang menenangkan */
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    background-color: var(--card-bg);
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px var(--shadow);
+    text-align: center;
+    max-width: 700px;
+    width: 90%;
+    margin: 30px auto;
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.game-area {
+    margin-top: 20px;
+}
+
+.image-container {
+    background-color: var(--bg-light);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 25px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-container img:hover {
+    transform: scale(1.02);
+}
+
+.clue-area {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 10px var(--shadow);
+}
+
+.music-controls button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    margin: 0 5px; 
+}
+
+.clue-area p {
+    margin: 0;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.clue-area span {
+    font-weight: 400;
+}
+
+.input-area {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    justify-content: center;
+    flex-wrap: wrap; /* Untuk responsif */
+}
+
+input[type="text"] {
+    flex-grow: 1;
+    padding: 12px 18px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 8px;
+    font-size: 1em;
+    outline: none;
+    transition: all 0.3s ease;
+    max-width: 300px;
+}
+
+input[type="text"]:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(106, 5, 114, 0.2);
+}
+
+button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.message {
+    margin-top: 20px;
+    font-size: 1.1em;
+    font-weight: 600;
+    min-height: 25px; /* Mencegah layout bergeser saat pesan muncul */
+}
+
+.message.correct {
+    color: var(--success-color);
+}
+
+.message.incorrect {
+    color: var(--accent-color);
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    margin-top: 40px;
+    color: var(--bg-dark);
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+/* Responsif */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px 25px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .input-area {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    input[type="text"], button {
+        width: 100%;
+        box-sizing: border-box; /* Pastikan padding dan border masuk dalam lebar */
+    }
+}

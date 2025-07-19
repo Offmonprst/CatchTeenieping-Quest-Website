@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <header class="topbar">
+        <div class="topbar-title">Teenieping Quest</div>
+        <div class="topbar-music-controls">
+            <button id="playMusic" class="topbar-button">Mainkan Musik</button>
+            <button id="pauseMusic" class="topbar-button hidden">Jeda Musik</button>
+        </div>
+    </header>
+    <title>Tebak Teenieping!</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+     <audio id="backgroundMusic" loop autoplay>
+        <source src="https://files.cloudkuimages.guru/videos/NZH5adQY.mp4" type="audio/mp3">
+        Maaf, browser Anda tidak mendukung elemen audio.
+    </audio>
+     <div class="container">
+       <div class="splash-screen" id="splashScreen">
+        <div class="splash-content">
+            <h1>Selamat Datang di Tebak Teenieping!</h1>
+            <p class="description">Di Game ini anda akan diuji berapa hafal semua karakter dari series catch Teenieping</p>
+            <p class="description">Kamu akan diberikan sebuah gambar dan petunjuk. Tebaklah Teenieping tersebut dalam batas waktu dan kesempatan yang diberikan!</p>
+            <button id="startButton" class="start-button">Mulai Permainan</button>
+        </div>
+    </div>
+    <div class="container hidden" id="gameContainer">
+        <h1>Teenieping Apa Ini?</h1>
+        <div class="score-container">
+            Benar: <span id="correctScore">0</span> | Salah: <span id="incorrectScore">0</span>
+        </div>
+        <div class="game-area">
+         <div class="timer-container">
+       Waktu Tersisa: <span id="timerDisplay">--</span> detik
+         </div>            
+            <div class="image-container">
+                <img src="https://via.placeholder.com/400x300?text=Gambar+Tebakan" alt="Gambar Tebakan" id="gameImage">
+            </div>
+            <div class="clue-area">
+                <p>Dari: <span id="clueText">Ini adalah hewan berkaki empat yang suka makan wortel.</span></p>
+            </div>
+            <div class="input-area">
+                <input type="text" id="answerInput" placeholder="Ketik jawabanmu di sini...">
+                <button id="checkButton">Cek Jawaban</button>
+            </div>
+            <p class="message" id="gameMessage"></p>
+            <button id="nextButton" class="hidden">Lanjut</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>Catch Teenieping Quest || Create by Riyzprst.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
