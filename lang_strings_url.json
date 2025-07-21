@@ -20,7 +20,7 @@
         "clue_prefix": "Dari:",
         "answer_input_placeholder": "Ketik jawabanmu di sini...",
         "no_more_questions": "Tidak ada lagi pertanyaan.",
-        "error_loading_game": "Gagal memuat game. Silakan coba lagi." // Contoh pesan error
+        "error_loading_game": "Gagal memuat game. Silakan coba lagi." 
     },
     "en": {
         "welcome_title": "Welcome to Guess Teenieping!",
