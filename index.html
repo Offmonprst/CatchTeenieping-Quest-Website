@@ -3,59 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <header class="topbar">
-        <div class="topbar-title">Teenieping Quest</div>
-        <div class="topbar-music-controls">
-            <button id="playMusic" class="topbar-button">Mainkan Musik</button>
-            <button id="pauseMusic" class="topbar-button hidden">Jeda Musik</button>
-        </div>
-    </header>
-    <title>Tebak Teenieping!</title>
+      <title>Tebak Teenieping!</title>
     <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+       <header class="topbar">
+        <button id="menuToggle" class="menu-toggle-button">&#9776;</button>
+        <div class="topbar-title">Teenieping Quest</div>
+        <div class="topbar-controls">
+                <button id="langToggle" class="topbar-button">EN</button>
+                <button id="playMusic" class="topbar-button">Mainkan Musik</button>
+                <button id="pauseMusic" class="topbar-button hidden">Jeda Musik</button>
+               <div id="moreOptionsContent" class="more-options-content">
+                <a href="mailto:rabootpreset19@gmail.com" target="_blank" class="menu-link" id="reportBugLink">Report Bug/Issue</a>                
+                <a href="https://saweria.co/likosan" target="_blank" class="menu-link" id="donateLink">Donate Us</a>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/offmon_nihh/" target="_blank" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://tiktok.com/@riyz.only" target="_blank" class="social-icon" aria-label="Tiktok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.facebook.com/share/15mXQHbbmB/" target="_blank" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
      <audio id="backgroundMusic" loop autoplay>
         <source src="https://files.cloudkuimages.guru/videos/NZH5adQY.mp4" type="audio/mp3">
         Maaf, browser Anda tidak mendukung elemen audio.
     </audio>
+    <audio id="correctSound">
+        <source src="https://files.cloudkuimages.guru/audios/kxlVbtz1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="incorrectSound">
+        <source src="https://files.cloudkuimages.guru/audios/dicONHvV.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
      <div class="container">
        <div class="splash-screen" id="splashScreen">
-        <div class="splash-content">
-            <h1>Selamat Datang di Tebak Teenieping!</h1>
-            <p class="description">Di Game ini anda akan diuji berapa hafal semua karakter dari series catch Teenieping</p>
-            <p class="description">Kamu akan diberikan sebuah gambar dan petunjuk. Tebaklah Teenieping tersebut dalam batas waktu dan kesempatan yang diberikan!</p>
-            <button id="startButton" class="start-button">Mulai Permainan</button>
+      <div class="splash-content">
+            <h1 id="splashTitle"></h1>
+            <p id="splashDesc1" class="description"></p>
+            <p id="splashDesc2" class="description"></p>
+            <button id="startButton" class="start-button"></button>
         </div>
     </div>
     <div class="container hidden" id="gameContainer">
-        <h1>Teenieping Apa Ini?</h1>
+        <h1><span id="Questions"></span></h1>
         <div class="score-container">
-            Benar: <span id="correctScore">0</span> | Salah: <span id="incorrectScore">0</span>
+            <span id="correctLabel"></span> <span id="correctScore">0</span> |
+            <span id="incorrectLabel"></span> <span id="incorrectScore">0</span>
         </div>
         <div class="game-area">
          <div class="timer-container">
-       Waktu Tersisa: <span id="timerDisplay">--</span> detik
+       <span id="timerLabel"></span> <span id="timerDisplay">--</span> <span id="secondLang">--</span> 
          </div>            
             <div class="image-container">
                 <img src="https://via.placeholder.com/400x300?text=Gambar+Tebakan" alt="Gambar Tebakan" id="gameImage">
             </div>
             <div class="clue-area">
-                <p>Dari: <span id="clueText">Ini adalah hewan berkaki empat yang suka makan wortel.</span></p>
+              <p><span id="cluePrefix"></span> <span id="clueText"></span></p>
             </div>
             <div class="input-area">
-                <input type="text" id="answerInput" placeholder="Ketik jawabanmu di sini...">
-                <button id="checkButton">Cek Jawaban</button>
+                <input type="text" id="answerInput" placeholder="">
+                <button id="checkButton"></button>
             </div>
-            <p class="message" id="gameMessage"></p>
-            <button id="nextButton" class="hidden">Lanjut</button>
+           <p class="message" id="gameMessage"></p>
+            <button id="nextButton" class="hidden"></button>
         </div>
     </div>
-
     <footer>
         <p>Catch Teenieping Quest || Create by Riyzprst.</p>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>
