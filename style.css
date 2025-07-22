@@ -117,6 +117,22 @@ body {
     gap: 10px;
 }
 
+.menu-link {
+    display: block; /* Agar setiap link ada di baris baru */
+    padding: 8px 15px;
+    color: white; /* Warna teks link */
+    text-decoration: none; /* Hapus garis bawah */
+    font-size: 1em;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    border-radius: 5px; /* Sedikit lengkungan */
+    text-align: center; /* Teks di tengah */
+}
+
+.menu-link:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Efek hover */
+}
+
 .topbar-button {
     background-color: rgba(255, 255, 255, 0.2);
     color: white;
@@ -131,6 +147,91 @@ body {
 .topbar-button:hover {
     background-color: rgba(255, 255, 255, 0.4);
     border-color: white;
+}
+.social-links {
+    display: flex; /* Untuk menata ikon secara horizontal */
+    justify-content: center; /* Pusatkan ikon */
+    gap: 15px; /* Jarak antar ikon */
+    padding: 10px 0; /* Padding atas bawah */
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Garis pemisah */
+    margin-top: 10px; /* Jarak dari link di atasnya */
+}
+
+.social-icon {
+    color: white; /* Warna ikon */
+    font-size: 1.8em; /* Ukuran ikon */
+    transition: color 0.3s ease;
+    text-decoration: none; /* Hapus garis bawah jika ada */
+}
+
+.social-icon:hover {
+    color: var(--secondary-color); /* Warna ikon saat di-hover */
+}
+
+@media (max-width: 600px) {
+    .topbar {
+        /* ... gaya yang sudah ada ... */
+    }
+ .topbar-controls {
+    position: relative; /* Penting untuk positioning absolute menu dropdown */
+    display: flex; /* Untuk menata item di dalamnya */
+    align-items: center;
+    gap: 10px; /* Jarak antar item kontrol */
+} 
+}	
+.more-options-content {
+    background-color: var(--primary-color); 
+    height: 100vh;
+    width: 100%;
+    max-width: 450px;
+    position: fixed;
+    top: 0;
+    right: -450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    justify-content: center;
+    text-align: center;
+    font-size: 1rem;
+    transition: .3s ease;
+}
+
+.more-options-content.active {
+    right: 0;
+}
+
+.more-options-content .topbar-button,
+.more-options-content .menu-link {
+    width: calc(100% - 30px); /* Lebar penuh dikurangi padding samping */
+    margin: 5px 15px; /* Margin untuk jarak antar item */
+    box-sizing: border-box; /* Pastikan padding/border masuk dalam width */
+    text-align: center;
+    border-radius: 8px; /* Lebih halus */
+}
+.more-options-content .social-links {
+    width: 100%; /* Pastikan social links juga penuh lebar */
+    margin-top: 20px; /* Beri jarak lebih banyak */
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.menu-toggle-button {
+    position: relative; /* Atur relatif agar z-index efektif */
+    z-index: 1003; /* Pastikan di atas menu side (1002) */
+    background: none;
+    border: none;
+    font-size: 2em; /* Ukuran simbol hamburger */
+    color: white;
+    cursor: pointer;
+    padding: 0 10px; /* Sedikit padding horizontal */
+    z-index: 1001; /* Pastikan di atas konten lain */
+    width: auto; /* Pastikan lebarnya otomatis sesuai konten */
+    flex-shrink: 0; /* Penting: agar tidak menyusut jika ruang sempit */
+}
+
+.menu-toggle-button:hover {
+    color: white; 
+    cursor: pointer;
 }
 
 /* Gaya untuk container utama game agar ada jarak dari topbar */
