@@ -247,6 +247,101 @@ body {
     margin-bottom: 30px;
 }
 
+.topbar-controls {
+    display: flex;
+    gap: 10px; /* Jarak antar tombol bahasa dan musik */
+    align-items: center;
+    position: relative; /* Untuk positioning absolute menu */
+}
+
+/* Gaya Tombol Bahasa di Topbar */
+.topbar-button {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.topbar-button:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    border-color: white;
+}
+
+/* Kelas untuk bahasa yang sedang aktif */
+.topbar-button.active-lang,
+.lang-toggle-button.active-lang { /* Gabungkan dengan yang di splash screen */
+    background-color: white; /* Latar belakang putih */
+    color: var(--primary-color); /* Teks warna primary */
+    border-color: white;
+}
+
+/* Tombol bahasa di Splash Screen */
+.lang-buttons-splash {
+    margin-top: 20px; /* Jarak dari konten atas */
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Jarak antar tombol bahasa */
+}
+
+.game-nav-button {
+    background-color: rgba(255, 255, 255, 0.1); /* Sedikit berbeda dari link biasa */
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin-bottom: 5px; /* Jarak antar tombol game */
+}
+
+.game-nav-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Gaya untuk menampilkan kata acak di game Susun Kata */
+.shuffled-word-display {
+    background-color: var(--secondary-color); /* Warna kuning */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 10px var(--shadow);
+    font-size: 1em; /* Ukuran font lebih besar */
+    font-weight: 700;
+    letter-spacing: 0.1em; /* Spasi antar huruf */
+    text-transform: uppercase; /* Huruf kapital semua */
+} 
+
+/* Anda mungkin ingin menyesuaikan media query jika lebar sidebar berubah */
+@media (max-width: 600px) {
+    /* ... gaya yang sudah ada ... */
+    .more-options-content .game-nav-button {
+        width: calc(100% - 30px); /* Pastikan lebar di mobile */
+        box-sizing: border-box;
+    }
+}
+
+.lang-toggle-button { /* Kelas yang sama untuk tombol bahasa di splash screen */
+    background-color: var(--secondary-color);
+    color: white; /* Warna teks putih untuk tombol di splash screen */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.lang-toggle-button:hover {
+    background-color: #FFD700; /* Kuning lebih terang */
+    transform: translateY(-2px);
+}
+
+.lang-toggle-button:active {
+    transform: translateY(0);
+}
+
 /* Gaya skor dan timer tetap sama */
 .score-container {
     font-size: 1.1em;
@@ -388,6 +483,29 @@ body {
 }
 
 /* ... gaya lainnya ... */
+
+.high-score-container {
+    font-size: 1.1em;
+    font-weight: 700; 
+    margin-bottom: 10px; 
+    color: var(--primary-color); 
+    text-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.1);
+}
+
+#highScore {
+    color: var(--secondary-color); /* Warna high score */
+}
+
+
+#currentScoreDisplay { 
+    color: var(--success-color); 
+    font-weight: 600; 
+}
+
+
+.score-container {
+    margin-top: 5px; 
+}
 
 .score-container {
     font-size: 1.1em;
