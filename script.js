@@ -49,6 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const incorrectSound = document.getElementById('incorrectSound');
     const donateTeks = document.getElementById('donateLink');
     const reportTeks = document.getElementById('reportBugLink');
+    const scrambleCurrentScoreLabel = document.getElementById("scrambleCurrentScoreLabel");
     // === Konfigurasi Game Global ===
     const INITIAL_TIME_GP = 15; // Waktu awal dalam detik
     const INITIAL_TIME_SW = 45;
@@ -212,6 +213,8 @@ document.addEventListener('DOMContentLoaded', () => {
   	  scrambleQuestionTitle.textContent = currentLangStrings.scramble_game_title;
         scrambleHighScoreLabel.textContent = currentLangStrings.high_score_display;
         scrambleCurrentScoreLabel.textContent = currentLangStrings.current_score_display;
+        scrambleTimerLabel.textContent = currentLangStrings.time_left_display;
+        scrambleTimeUnit.textContent = currentLangStrings.time_unit;
     }
 
     // === Fungsi Logika Timer Umum (Digunakan oleh kedua game) ===
