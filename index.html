@@ -19,6 +19,8 @@
                 <button id="playMusic" class="topbar-button">Mainkan Musik</button>
                 <button id="pauseMusic" class="topbar-button hidden">Jeda Musik</button>
                <div id="moreOptionsContent" class="more-options-content">
+                <button id="goToGuessPicture" class="menu-link game-nav-button">Tebak Gambar</button>
+                <button id="goToScrambleWord" class="menu-link game-nav-button">Susun Kata</button>
                 <a href="mailto:rabootpreset19@gmail.com" target="_blank" class="menu-link" id="reportBugLink">Report Bug/Issue</a>                
                 <a href="https://saweria.co/likosan" target="_blank" class="menu-link" id="donateLink">Donate Us</a>
                 <div class="social-links">
@@ -48,14 +50,20 @@
             <p id="splashDesc1" class="description"></p>
             <p id="splashDesc2" class="description"></p>
             <button id="startButton" class="start-button"></button>
+                <div class="lang-buttons-splash">
+                <button id="splashLangID" class="lang-toggle-button active-lang">ID</button>
+                <button id="splashLangEN" class="lang-toggle-button">EN</button>
+            </div>
         </div>
     </div>
-    <div class="container hidden" id="gameContainer">
+    <div class="container hidden" id="guessPictureGameContainer"> 
         <h1><span id="Questions"></span></h1>
-        <div class="score-container">
-            <span id="correctLabel"></span> <span id="correctScore">0</span> |
-            <span id="incorrectLabel"></span> <span id="incorrectScore">0</span>
+        <div class="high-score-container">
+            <span id="highScoreLabel"></span> <span id="highScore">0</span>
         </div>
+        <div class="score-container">
+            <span id="currentScoreLabel"></span> <span id="currentScoreDisplay">0</span>
+        </div> 
         <div class="game-area">
          <div class="timer-container">
        <span id="timerLabel"></span> <span id="timerDisplay">--</span> <span id="secondLang">--</span> 
@@ -72,6 +80,32 @@
             </div>
            <p class="message" id="gameMessage"></p>
             <button id="nextButton" class="hidden"></button>
+        </div>
+    </div>
+        <div class="container hidden" id="scrambleWordGameContainer">
+        <h1 id="scrambleTitle"></h1>
+        <div class="high-score-container">
+            <span id="scrambleHighScoreLabel"></span> <span id="scrambleHighScore">0</span>
+        </div>
+        <div class="score-container">
+            <span id="scrambleCurrentScoreLabel"></span> <span id="scrambleCurrentScoreDisplay">0</span>
+        </div>
+        <div class="timer-container">
+            <span id="scrambleTimerLabel"></span> <span id="scrambleTimerDisplay">--</span> <span id="scrambleTimeUnit"></span>
+        </div>
+        <div class="game-area">
+            <div class="shuffled-word-display">
+                <p id="shuffledWord"></p>
+            </div>
+            <div class="clue-area">
+                <p><span id="scrambleCluePrefix"></span> <span id="scrambleClueText"></span></p>
+            </div>
+            <div class="input-area">
+                <input type="text" id="scrambleAnswerInput" placeholder="">
+                <button id="scrambleCheckButton"></button>
+            </div>
+            <p class="message" id="scrambleGameMessage"></p>
+            <button id="scrambleNextButton" class="hidden"></button>
         </div>
     </div>
     <footer>
